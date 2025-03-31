@@ -1,0 +1,45 @@
+﻿@model BookShop.Models.UserViewModel.HomeViewModel
+
+@{
+    ViewData["Title"] = "Your Cart";
+    var totalPrice = Model.CartItems.Sum(item => item.Price * item.Quantity);
+}
+
+<div class="container mt-4 fade-in">
+    <h2>Your Cart</h2>
+    <div class="text-danger" asp-validation-summary="All"></div> <!-- Validation summary to display model errors -->
+    @if (Model.CartItems.Any())
+    {
+        <div class="row">
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column bg-body">
+                            <p class="card-text text-black">Name: @item.BookName</p>
+                            <p class="card-text text-black">Price: Rs. @item.Price</p>
+                            <p class="card-text text-black">Quantity: @item.Quantity</p>
+                            <p class="card-text text-black">Total: Rs. @(item.Price * item.Quantity)</p>
+                            <form asp-action="RemoveFromCart" method="post" class="mt-auto">
+                                <input type="hidden" name="bookId" value="@item.BookId" />
+                                <button type="submit" class="btn btn-primary btn-sm">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="mt-4">
+            <h5>Total Price: Rs. @totalPrice</h5>
+            <form asp-action="PlaceOrder" method="post">
+                <button type="submit" class="btn btn-success">Place Order</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            Your cart is empty.
+        </div>
+    }
+</div>

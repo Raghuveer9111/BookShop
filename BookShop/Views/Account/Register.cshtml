@@ -1,0 +1,40 @@
+﻿@model BookShop.Models.AccountViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "Sign in";
+}
+
+<div class="bookShop-form-container fade-in">
+    <div class="custom-form-width">
+        <form method="post" class="form" asp-controller="Account" asp-action="Register">
+            <div>
+                <h4>Create Account with us</h4>
+            </div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="FullName">Full Name</label>
+                <input type="text" asp-for="FullName" class="form-control" name="FullName" value="@Model.FullName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input type="email" asp-for="Email" class="form-control" name="Email" value="@Model.Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressLine">Address</label>
+                <input type="text" asp-for="AddressLine" class="form-control" name="AddressLine" value="@Model.AddressLine" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <input type="password" asp-for="Password" class="form-control" name="Password" value="@Model.Password" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input type="password" asp-for="ConfirmPassword" class="form-control" name="ConfirmPassword" value="@Model.ConfirmPassword" />
+            </div>
+            <div class="form-group btnTop">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+

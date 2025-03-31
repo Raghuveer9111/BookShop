@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="d-flex justify-content-center align-items-center fade-in">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 400px; height: 400px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Profile</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-3">
+                <a asp-controller="Home" asp-action="Index" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-house-door"></i></svg>
+                    Home
+                </a>
+            </li>
+            <li class="mb-3">
+                <a asp-controller="User" asp-action="UserProfile" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-person-badge-fill"></i></svg>
+                    Profile
+                </a>
+            </li>
+            <li class="mb-3">
+                <a asp-controller="User" asp-action="ViewOrders" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-bag-check-fill"></i></svg>
+                    Orders
+                </a>
+            </li>
+        </ul>
+        <hr>
+    </div>
+</div>
+

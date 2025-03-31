@@ -1,0 +1,50 @@
+﻿@model BookShop.Models.AccountViewModel.CreateUserViewModel
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<div class="bookShop-form-container fade-in">
+    <div class="custom-form-width">
+        <form class="form" asp-controller="Admin" asp-action="CreateUser" method="post">
+            <div>
+                <h4>
+                    Register a User
+                </h4>
+            </div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">EmailId</label>
+                <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmEmail">Confirm Email</label>
+                <input type="password" class="form-control" id="ConfirmEmail" name="ConfirmEmail" value="@Model.ConfirmEmail" />
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressLine">Address</label>
+                <input type="text" class="form-control" id="AddressLine" name="AddressLine" value="@Model.AddressLine" />
+            </div>
+            <div>
+                <label asp-for="Password">Password</label>
+                <input type="password" class="form-control" id="Password" name="Password" value="@Model.Password" />
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" value="@Model.ConfirmPassword" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Role">Role</label>
+                <input type="text" class="form-control" id="Role" name="Role" value="@Model.Role" readonly />
+            </div>
+            <div class="btnTop">
+                <a class="btn btn-primary" asp-controller="Admin" asp-action="Index">Back</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

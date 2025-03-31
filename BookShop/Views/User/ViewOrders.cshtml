@@ -1,0 +1,52 @@
+﻿@model BookShop.Models.UserViewModel.UserOrderViewModel
+
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="container mt-4 fade-in">
+    <h2>My Orders</h2>
+    @if (Model.Orders.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Order Date</th>
+                        <th>Total Amount</th>
+                        <th>Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Orders)
+                    {
+                        <tr>
+                            <td>@order.OrderId</td>
+                            <td>@order.OrderDate.ToString("g")</td>
+                            <td>@order.TotalAmount</td>
+                            <td>
+                                <ul>
+                                    @foreach (var item in order.OrderItems)
+                                    {
+                                        <li>@item.BookName - @item.Quantity x @item.Price</li>
+                                    }
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            You have no orders.
+        </div>
+    }
+</div>
+
+
+

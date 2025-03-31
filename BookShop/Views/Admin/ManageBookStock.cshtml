@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BookShop.Models.Book>
+
+@{
+    ViewBag.Title = "Manage Book Stock";
+}
+<div class="btnTop">
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-success mb-3 btn-primary">Back</a>
+
+    <a asp-action="AddBook" asp-controller="Admin" class="btn btn-success mb-3 btn-primary">Add a new Book</a>
+</div>
+
+<div class="form-container fade-in">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>BookId</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th>Price</th>
+                    <th>Genre</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.BookId</td>
+                        <td>@book.BookName</td>
+                        <td>@book.Author</td>
+                        <td>@book.ISBN</td>
+                        <td>@book.Price</td>
+                        <td>@book.Genre</td>
+                        <td>@book.Quantity</td>
+                        <td>
+
+                            <a asp-controller="Admin" asp-action="EditBookDetails" asp-route-bookId="@book.BookId" class="btn btn-primary">Edit</a>
+                            <a asp-controller="Admin" asp-action="DeleteBook" asp-route-bookId="@book.BookId" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h3>No books found</h3>
+    }
+    
+</div>

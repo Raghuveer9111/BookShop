@@ -1,0 +1,157 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color:white;
+}
+
+.form {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.bookShop-form-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.custom-form-width {
+    max-width: 800px !important;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 8px;
+/*    padding: 20px;*/
+}
+
+.for-group {
+    padding: 4px 7px 2px 4px;
+}
+
+main {
+    padding-top: 40px;
+}
+
+.card {
+    background:#808080;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow:revert;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    background-color: #f6f8f9;
+    color: black;
+    border:white;
+}
+.btn-primary:hover {
+        
+  background-color: #0D6EFD;
+  color: white;
+}
+
+.btnTop {
+    padding-top: 20px;
+}
+
+.form-control {
+    width: 100%;
+}
+.navbar-brand {
+    color:black !important;
+    font-size: 2rem;
+}
+.cart-icon {
+    font-size: 2rem; 
+    color: white; 
+}
+
+@keyframes fadeIn{
+    from {
+        opacity:0;
+        transform:translate(20px);
+    }
+    to{
+        opacity:1;
+        transform:translate(0);
+    }
+}
+.fade-in{
+    animation: fadeIn 0.5s ease-in-out;
+}
+.card {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+   
+    height: 225px;
+}
+
+body {
+    padding-top: 56px; 
+}
+.input-group-text{
+    background-color:#f6f8f9;
+}
+    .input-group-text:hover {
+        background-color: #f6f8f9;
+        color:black;
+    }
+.searchBtn{
+    background-color:#f6f8f9;
+    border-radius:0px;
+}
+.searchBtn:hover{
+    background-color:#808080;
+}
+
+
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1); 
+    }
+
+    to {
+        transform: scale(1.02); 
+    }
+}
+
+.zoom:hover {
+    animation: zoomIn 0.5s forwards; 
+}
+
+
+
+
+

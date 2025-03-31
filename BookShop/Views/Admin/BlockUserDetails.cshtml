@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BookShop.Models.BookShopUser>
+
+@{
+    ViewBag.Title = "Blocked User Details";
+}
+
+<div class="form-container fade-in">
+    <div class="mb-3">
+        <a class="btn btn-primary" asp-controller="Admin" asp-action="ManageUsers">Back</a>
+    </div>
+    @if (Model != null && Model.Any())
+    {
+        <div>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var usr in Model)
+                    {
+                        <tr>
+                            <td>usr.Id</td>
+                            <td>@usr.UserName</td>
+                            <td>@usr.Email</td>
+                            <td>
+                                <a asp-action="UnblockUser" asp-controller="Admin" asp-route-email="@usr.Email" class="btn btn-success">Unblock</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            No blocked users found.
+        </div>
+    }
+</div>

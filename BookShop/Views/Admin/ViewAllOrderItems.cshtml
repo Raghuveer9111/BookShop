@@ -1,0 +1,56 @@
+﻿@model BookShop.Models.UserViewModel.UserOrderViewModel
+
+@{
+    ViewData["Title"] = "All Order Items";
+}
+
+<div class="container mt-4 fade-in">
+    <div>
+        <a asp-controller="Admin" asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+    <h2>All Order Items</h2>
+    @if (Model.Orders.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User Email</th>
+                        <th>Order Date</th>
+                        <th>Total Amount</th>
+                        <th>Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Orders)
+                    {
+                        <tr>
+                            <td>@order.OrderId</td>
+                            <td>@order?.User?.Email</td>
+                            <td>@order?.OrderDate.ToString("g")</td>
+                            <td>@order?.TotalAmount</td>
+                            <td>
+                                <ol>
+                                    @foreach (var item in order.OrderItems)
+                                    {
+                                        <li>@item.BookName - @item.Quantity</li>
+                                    }
+                                </ol>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            No orders found.
+        </div>
+    }
+</div>
+
+
+

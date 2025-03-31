@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Admin dashboard";
+}
+<div class="mb-3">
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</a>
+</div>
+<div class="d-flex justify-content-center align-items-center fade-in">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 400px; height: 400px;">
+        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-person-vcard-fill"></i></svg>
+            <span class="fs-4">Admin dashboard</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="mb-3">
+                <a asp-controller="Admin" asp-action="ManageBookStock" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-book-half"></i></svg>
+                    Go to Manage Book Stock
+                </a>
+            </li>
+            <li class="mb-3">
+                <a asp-controller="Admin" asp-action="ManageUsers" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-people-fill"></i></svg>
+                    Go to Manage Users
+                </a>
+            </li>
+            <li class="mb-3">
+                <a asp-controller="Admin" asp-action="ViewAllOrderItems" class="nav-link link-body-emphasis btn-primary">
+                    <svg class="bi pe-none me-2" width="16" height="16"><i class="bi bi-bag-check-fill"></i></svg>
+                    View Total Orders
+                </a>
+            </li>
+        </ul>
+        <hr>
+    </div>
+</div>

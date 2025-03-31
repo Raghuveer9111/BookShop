@@ -1,0 +1,42 @@
+﻿@model BookShop.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<div class="container mt-4 fade-in">
+    @if (Model != null)
+    {
+        <div class="form-container">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Published Date</th>
+                        <th>Publisher</th>
+                        <th>Description</th>
+                        <th>Price</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Title</td>
+                        <td>@Model.Author</td>
+                        <td>@Model.PublishedDate.ToString("MMMM dd, yyyy")</td>
+                        <td>@Model.Publisher</td>
+                        <td>@Model.Description</td>
+                        <td>@Model.Price</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            No Details present
+        </div>
+    }
+</div>
+
